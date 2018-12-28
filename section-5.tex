@@ -1,0 +1,14 @@
+\section{Discussion} \label{sec:discussion}
+
+% ANTOINE -> TODO
+
+% TODO - from reviewer 2 : I agree with the fact that GraphQL is way more adopted than RDF-based semantic approaches, but how does it comes out from your previous analysis? GraphQL was not even mentioned before, and does not arise from the results. Please clarify how can one conclude that, by means of references and evidence from your analysis.
+
+% TODO - from reviewer 2 : Finally, as a future work, authors could automatize the process to help developers in the form of a tool or wizard. -> already in progress
+
+As indicated in the tables proposed in section \ref{sec:matrix} and in the example presented in the previous section, there is no framework yet available to build a semantic REST API. This section discusses, from our perspective, why there is no standard solution to meet all the criteria. These limits also make it possible to initiate research initiatives for the community. 
+
+First, there is no IETF or W3C standard interchange format for building semantic REST APIs. In addition, none of the existing interchange formats support all the criteria described above, nor are they widely adopted, making it likely that new formats will emerge. For this reason, frameworks supporting semantic REST APIs will be forced to rely on formats that are prone to evolve, which will require additional effort and costs. This reduces the likelihood that developers will invest time in developing such features for their framework.
+
+The second reason is that most developers ask for more support for GraphQL and streaming than for Semantic REST. We believe that this is due to two reasons. First of all, GraphQL and streaming are well understood and known, which is unfortunately less the case with RESTful semantic API concepts. Second, there is currently no tool that leverages the power of REST semantic APIs. Thus, being compatible with Semantic REST requires additional efforts to adapt client libraries and to train developers. We believe that with new tools, such as front-end clients, automated test libraries, improved documentation generation and HTTP clients such as Postman, developers would be more interested in semantic REST features.
+

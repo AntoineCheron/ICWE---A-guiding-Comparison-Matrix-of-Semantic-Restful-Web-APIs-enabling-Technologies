@@ -1,0 +1,81 @@
+\begin{table*}[ht]
+\begin{tabular}{ |P{1.5cm}|p{8cm}| } 
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Design > Resources}} \\
+ \hline
+ \textbf{MT} & Models/consider available media types \\
+ \textbf{MR} & Models resources \\
+ \textbf{MRA} & Models resources' attributes \\
+ \textbf{SC} & Separates domain model from URI model \\
+ \textbf{OTO} & Operations are associated to their own input and output data model \\
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Design > Protocol Compliance}} \\
+ \hline
+ \textbf{MRO} & Supports association of HTTP Verbs to operations \\
+ \textbf{EXT} & Extensible with custom data-interchange formats \\
+ \textbf{CN} & Support content-negotiation \\
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Design > Atomic Resources}} \\
+ \hline
+ \textbf{EAR} & Enforces that the full resource is the smallest data-set operations can handle \\
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Profile > Interaction}} \\
+ \hline
+ \textbf{DR} & Describes resources' properties \\
+ \textbf{OSD} & Describes HTTP operations \\
+ \textbf{LT} & Describes templated URIs \\
+ \textbf{CR} & Describes available interchange formats for Read Requests \\
+ \textbf{CU} & Describes available interchange formats Update Requests \\
+ \textbf{CM} & Describes HTTP verb associated to an operation \\
+ \textbf{RUN} & Targets runtime information-enriched description \\
+ \textbf{PS} & Supports pagination description \\
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Profile > Domain}} \\
+ \hline
+ \textbf{HL} & Provides hyperlinks to other resources as meta-data \\
+ \textbf{HYP} & Hypermedia controls \\
+ \textbf{MC} & Models and describes business constraints on the data model \\
+ \textbf{TI} & Support type inheritance \\
+ \textbf{LNM} & Links are modeled by the framework, not added manually in request handlers \\
+ \textbf{COA} & Describe conditions to denote an operation/link availability, otherwise the model says they are always available \\
+ \textbf{CC} & Conditions for operation/link availability use more information than current resource state, such as the application context, or user-provided information \\
+ \textbf{AUT} & Model the authentication mechanism \\
+ \textbf{RS} & Describe resources' states \\
+ \textbf{SLA} & Describe non-functional properties such as Service Level Agreement \\
+ \textbf{ERR} & Describe errors \\
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Semantic > Description}} \\
+ \hline
+ \textbf{SD} & Semantically describes resources' properties and HTTP operations \\
+ \textbf{DC (opt.)} & Support machine-interpretable and deterministic conditions to denote an operation/link availability \\
+ \textbf{RDF} & Support the addition of other RDF vocabularies - makes it RDF-compatible \\
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Semantic > Linked Data}} \\
+ \hline
+ \textbf{CL} & Support giving human-interpretable semantic meaning to links \\
+ \textbf{SCL} & Support giving semantic meaning to links from RDF vocabulary \\
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Others}} \\
+ \hline
+ \textbf{JSON} & JSON-based format \\
+ \textbf{ECD} & Entity-centric document as opposed to triple-centric \\
+ \textbf{NOM} & No modification on the structure compared to an original JSON file, limited to adding more information \\
+ \textbf{HF} & Made for human-readability \\
+ \textbf{MF} & Made for machine-readability \\
+ \textbf{CUR} & Support for Curies \\
+ \textbf{PX} & Uses prefix for reserved keywords to avoid name collision \\
+ \textbf{SML} & Support several meta-data level \\
+ \textbf{ERS} & Transfer the resource's state explicitly \\
+ \textbf{TAR} & Operations have a field to indicate which URI the operation targets, allowing to reference them as resources \\
+ \textbf{FSM} & Model the system as a FSM \\
+ \textbf{RS} & Model resources as FSM, not only the system \\
+ \textbf{STA} & Targets static documentation \\
+ \textbf{INC} & Documentation can be split into several pieces \\
+ \textbf{FF} & File Format \\
+ \textbf{PL} & Programming Language \\
+ \textbf{LGEN} & Links to other resources hold by the system are generated at runtime, not written as code \\
+ \hline
+\end{tabular}
+\caption{Matrix Comparison Criteria}
+\label{criteria}
+\end{table*}
