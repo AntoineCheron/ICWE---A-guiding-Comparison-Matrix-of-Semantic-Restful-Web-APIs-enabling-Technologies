@@ -6,3 +6,7 @@
 
 % - Verborgh, Ruben, et al. "Survey of semantic description of REST APIs." REST: Advanced Research Topics and Practical Applications. Springer, New York, NY, 2014. 69-89.
 % - Garriga, Martin, et al. "RESTful service composition at a glance: A survey." Journal of Network and Computer Applications 60 (2016): 32-53.
+
+% Added by Antoine on December 31th -> TODO review
+In \cite{serrano2017linked} authors present a framework for REST-service integration based on Linked Data models. First, API providers should semantically describe their REST services. Second, API consumers express data queries with SPARQL. Then, they use a middleware developed by the authors that can automatically compose API calls to respond to data queries with a RDF graph.
+At the first step, authors needed to find and select an RDF-compatible Interface Description Language, which is precisely the kind of use-case our approach address. Because they couldn't find an existing one fitting their needs, they designed a new one by leveraging existing technologies such as MSM \cite{pedrinaci2010toward}, Hydra, RAML and OpenApi. This new language cannot be classified in this paper as it is described on the surface and not documented.

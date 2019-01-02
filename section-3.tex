@@ -17,13 +17,11 @@ In this section we present one comparison matrix per category. Each matrix class
 
 \subsection{Comparison Matrix Design Methodology}
 
-% TODO - From reviewer 2 : My impression is that the paper only accounts the result of the web search, and developers' expertise is not actually leveraged. Which are the daily problems developers face? Go deeper with their experience. The framework is intended to be used by developers, you should take into account their insights from the trenches. Interview people from your company if needed, and provide links to their responses/questionnaires.
+% TODO - IN PROGRESS - From reviewer 2 : My impression is that the paper only accounts the result of the web search, and developers' expertise is not actually leveraged. Which are the daily problems developers face? Go deeper with their experience. The framework is intended to be used by developers, you should take into account their insights from the trenches. Interview people from your company if needed, and provide links to their responses/questionnaires.
 
 % TODO - From reviewer 2 : In the same direction, shouldn't popularity be a possible, cross-cutting criteria for comparison? if I choose technology X I'd expect to have a vibrant community to help me with any problem that may arise.
 
 % TODO - From reviewer 2 : The methodology steps can be shortened, as they do not add any useful information. How did you verified the criteria (step v) w.r.t. your previous projects? Provide an example.
-
-% TODO - From reviewer 2 : I cannot stand the number of acronyms the paper introduces. I acknowledge that it's difficult to present big names on tables but this is impossible to follow. E.g., You could numerate or codify approaches (most of them already have a short name) and put them as columns (criteria as rows).
 
 The design of the comparison matrix follows a 5 steps sequential process: (i) looking for candidate technologies, (ii) selecting candidate technology, (iii) deep reading and understanding of each candidate technology, (iv) elaboration of fine grain criteria to characterized and differentiate technologies, (v) verification that the elaborated criteria suited all technologies and the need from XXX developers, and finally (vi) verification that the elaborated criteria highlighted the differences between technologies.
 
@@ -46,16 +44,9 @@ We then verified (step v) that the classification criteria suited the needs we h
 
 As a final step (step vi), we read the specifications again to validate that the selected criteria highlighted differences and commonalities well, and to verify results.
 
-All criteria are listed in table \ref{criteria}. Only machine-processable descriptions are considered.
-
-\input{figures/criteria.tex}
+In the rest of the paper, only machine-processable descriptions are considered.
 
 \subsection{Interface Description Language}
-
-% TODO - From reviewer 2 : It's impossible to cover all approaches but you should consider including LRA (Linked Rest APIs) - Linked REST APIs: A Middleware for Semantic REST API Integration, D Serrano, E Stroulia, D Lau, T Ng, Web Services (ICWS), 2017 IEEE International Conference on, 138-145
-% and check its related work for others.
-
-% TODO - from reviewer 2 : Include a column on the figures summarizing the number of criteria met by each approach.
 
 % TODO - from reviewer 2 : How did you get columns that are not covered by at least one approach? From the protocol (sec 4.1) it seems that you extracted the criteria by analyzing existing technologies, this means, at least one technology offered it.
 
@@ -115,11 +106,9 @@ Last, the matrix shows that no format support the description of constraints on 
 
 \subsection{Implementation Frameworks}
 
-% TODO - from reviewer 2 : Maybe it's out of scope but I think Loopback (https://loopback.io/) should be analyzed as a framework as it provides/leverages some semantic sugar.
-
 Implementation frameworks are software libraries that guide developers through the implementation of Web APIs. We limit the comparison to frameworks that claim to support HATEOAS. We identified six frameworks that do so.
 
-In \cite{salvadori2014framework} authors propose a Java framework based on JAX-RS 2.0 that uses annotations to semantically describe REST APIs. The end result is a JSON-LD document, enriched with the Hydra vocabulary, that describes the whole API. In \cite{parastatidis2010role} Parastatidis et al. present Restfulie, a framework to ease the development of REST APIs using resources, content-negotiation and state transitions as its core building blocks. Besides these frameworks, we found that API-Platform, Spring HATEOAS, JAX-RS and Ripozo support HATEOAS features. They are classified in Fig. \ref{frameworks-matrix} according to 29 criteria.
+In \cite{salvadori2014framework} authors propose \textit{Hypermedia Web API Support}, a Java framework based on JAX-RS 2.0 that uses annotations to semantically describe REST APIs. The end result is a JSON-LD document, enriched with the Hydra vocabulary, that describes the whole API. In \cite{parastatidis2010role} Parastatidis et al. present Restfulie, a framework to ease the development of REST APIs using resources, content-negotiation and state transitions as its core building blocks. Besides these frameworks, we found that API-Platform, Spring HATEOAS, JAX-RS and Ripozo support HATEOAS features. They are classified in Fig. \ref{frameworks-matrix} according to 29 criteria.
 
 % FIGURE OF THE INTERCHANGE FORMATS CLASSIFICATION
 \begin{figure*}[t]
