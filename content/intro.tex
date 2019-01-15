@@ -6,16 +6,17 @@ Until today, no single standard has emerged to design truly RESTful APIs. Conseq
 
 In addition, a new trend has recently emerged to create RESTful APIs that carry their own semantics, they are called Semantic RESTful APIs~\cite{7195633}. It is a vision that proposes to make fully REST-compliant APIs compatible with the Semantic Web ~\cite{TheSemanticWeb} and Linked Data~\cite{LinkedDataPrinciples}. From our experience at XXX\footnote{company name has been removed for double blind review process}, we have found that building such APIs does not require much more effort than truly RESTful systems, whereas it offers great benefits, such as loose-coupling, automated API mash-ups~\cite{benslimane2008services}, machine-interpretability and very powerful querying. 
 
+% TODO: add a word on the questionnaire sent to developers to gather their REX on choosing hypermedia and Linked Data technologies
 However, the design of semantic RESTful APIs considerably increases the complexity for the architect to choose the appropriate technology. Indeed, the specific criteria and properties to be taken into account when choosing an IDL, an exchange format and a framework are not explicit. A decision matrix is missing that would allow the architect to understand the consequences of a design decision, i.e. the characteristics and limitations of each approach.
  
-In this paper, we propose to fill this gap by providing decision matrix that help architects to choose the technologies that will best meet their needs. The main contributions of this paper are:
+In this paper, we propose to fill this gap by providing decision matrices that help architects to choose the technologies that will best meet their needs. The main contributions of this paper are:
 
 \begin{itemize}
-    \item three comparison matrix of interchange formats, interface description languages and frameworks that helps choosing appropriate technologies to build Semantic RESTful APIs
+    \item three comparison matrices of interchange formats, interface description languages and frameworks that help choosing appropriate technologies to build Semantic RESTful APIs
     \item a list of features that are missing from state-of-the-art technologies to allow the creation of RESTful semantic APIs
 \end{itemize}
 
-Based on these comparison matrix, we draw the outline of a research road-map to ease the adoption of Semantic RESTful APIs in industry.
+Based on these comparison matrices, we draw the outline of a research road-map to ease the adoption of Semantic RESTful APIs in industry.
 
 The remainder of this paper is organized as follows. Section \ref{sec:background} provides the required background on Web API and REST technology. Then section \ref{sec:maturityLevel} describes the reference maturity level to choose the functionality level of the API and its limitation. The two following sections describes our comparison matrix and an illustration example to highlight the benefit of our proposition. Finally section \ref{sec:discussion} discusses the role of the existing frameworks to build REST APIs. 
 

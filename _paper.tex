@@ -12,9 +12,12 @@
 % to display URLs in blue roman font according to Springer's eBook style:
 % \renewcommand\UrlFont{\color{blue}\rmfamily}
 
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\definecolor{lightGreen}{rgb}{0.85, 0.917, 0.827}
+
 \begin{document}
 %
-\title{A guiding Comparison Matrix of Semantic Restful Web APIs enabling Technologies}
+\title{Comparison Matrices of Semantic RESTful API Technologies}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
@@ -35,17 +38,22 @@ Univ Rennes, Inria, CNRS, IRISA 263 Avenue General Leclerc, F-35000 Rennes
 \url{https://www.irisa.fr/fr/equipes/diverse}}
 %
 \maketitle              % typeset the header of the contribution
+
+\begin{abstract}
+Semantic RESTful APIs combine the power of the REST architectural style, the Semantic Web and Linked Data. They picture a world in which Web APIs are easier to browse and more meaningful for humans while also being machine-interpretable, turning them into platforms that developers and companies can build on. We counted 38 technologies that target building such APIs. As there is no one-size-fits-all technology, they have to be combined. This makes selecting the appropriate set of technologies to a specific context a difficult task for architects and developers. So, how the selection of such a set of technologies can be eased?
+
+In this paper we propose a comparison matrix of Semantic RESTful APIs enabling technologies. It is based on the analysis of the differences and commonalities between existing technologies. It intends to help developers and architects in making an informed decision on the technologies to use. It also highlights the limitations of state-of-the-art technologies from which open challenges are derived.
+
+\keywords{Semantic Web\and REST\and Web API\and comparison\and Linked Data}
+\end{abstract}
 %
-\include{abstract}
-%
-%
-%
-\include{section-1}
-\include{section-2}
-\include{section-3}
-\include{section-4}
-\include{section-5}
-\include{section-6}
+\input{content/intro}
+\input{content/background}
+\input{content/comparison-matrix}
+\input{content/example}
+\input{content/discussion}
+\input{content/related-work}
+\input{content/conclusion}
 %
 % ---- Bibliography ----
 %

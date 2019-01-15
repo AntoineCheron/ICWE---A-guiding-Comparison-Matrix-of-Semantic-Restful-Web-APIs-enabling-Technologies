@@ -1,0 +1,20 @@
+\section{Related Work}
+
+% OLIVIER -> TODO
+
+% TODO : from reviewer 2 : By shortening Sec. 2 and 3 you make space for RELATED WORK, which is completely omitted. A quick search for "semantic rest apis survey" shows at least the following papers you must discuss:
+
+% - Verborgh, Ruben, et al. "Survey of semantic description of REST APIs." REST: Advanced Research Topics and Practical Applications. Springer, New York, NY, 2014. 69-89.
+% - Garriga, Martin, et al. "RESTful service composition at a glance: A survey." Journal of Network and Computer Applications 60 (2016): 32-53.
+
+% Added by Antoine on December 31th -> TODO review
+In \cite{serrano2017linked} authors present a framework for REST-service integration based on Linked Data models. First, API providers should semantically describe their REST services. Second, API consumers express data queries with SPARQL. Then, they use a middleware developed by the authors that can automatically compose API calls to respond to data queries with a RDF graph.
+At the first step, authors needed to find and select an RDF-compatible Interface Description Language, which is precisely the kind of use-case our approach address. Because they couldn't find an existing one fitting their needs, they designed a new one by leveraging existing technologies such as MSM \cite{pedrinaci2010toward}, Hydra, RAML and OpenApi. This new language cannot be classified in this paper as it is described on the surface and not documented.
+
+% Added by Antoine on January 3rd -> TODO review
+With this paper we try to lower the entry barrier for developing mature Semantic REST APIs. Other research efforts were done towards this same objective. Among them is the semi-automatic annotation of web services as done by Patil et al. in \cite{patil2004meteor}. Their contribution could help significantly increase the number of semantically described services, in case their work is open-sourced and updated to support nowadays popular technologies.
+
+% Works going in the same direction :
+% Tools to help semantically annotate documents
+% Karma tool : https://dl.acm.org/citation.cfm?id=1993058
+% http://sweet.kmi.open.ac.uk/
