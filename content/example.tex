@@ -1,13 +1,6 @@
 \section{Matrices usage example}
 
-% To do well:
-% [] figures should be concise and take as few space as possible -> to be optimized
-% [X] example must be from a real example
-% [X] justify the criteria that the technologies will have to meet -> to be validated by Johann & Olivier
-% [X] if some technologies do not meet some criteria, explain why they can be chosen anyway
-% [X] do not write a useless conclusion again (see section-4-archive.tex for an example)
-
-In this section we present an insurance company's service that manage insurance contracts to demonstrate how the presented comparison matrices can be used in a real-world context. The domain of the project we present here is a lighten version of the combination of domains from projects we have done at XXX for former clients, who are big french insurance companies.
+In this section we present an insurance company's service that manage insurance contracts to demonstrate how the presented comparison matrices can be used in a real-world context. The domain of the project we present here is a lighten version of the combination of domains from projects we have done at FABERNOVEL for former clients, who are big french insurance companies.
 
 \subsection{Domain description}
 
@@ -19,7 +12,8 @@ The service we describe have to communicate with both internal and external comp
 
 In the context of this service, there is a huge amount of business rules that determine (i) the warranties an insured can include in a contract and (ii) the available services for a case, based on the specificity of the given case and the warranties of the contract that the case is linked to. Writing and maintaining these rules both on the server and its clients would have been very costly. To keep business rules on the server-side only we decided to use the Hypermedia As The Engine Of Application State.
 
-Because the project constitutes the core of the company's business, it should be future proof, which we believe includes being Linked Data compatible. Moreover, considering that the contractors that provide services are very diverse and numerous, the interactions with their APIs should leverage the possibilities offered by the use of RDF semantics, such as automatic discovery and composition. So, we looked for RDF-compatible technologies.
+Because the project constitutes the core of the company's business, it should be future proof. We believe that this includes being Linked Data compatible because of the growing interest in those technologies and the new possibilities it offers, such as automatic mash-ups. Moreover, considering that the contractors that provide services are very diverse and numerous, the interactions with their APIs should leverage the possibilities offered by the use of RDF semantics, such as automatic discovery and composition. So, we looked for RDF-compatible technologies.
+% [] - Explain why being future proof means being Linked Data compatible with one argument.
 
 Because the project is core to the company, API clients will likely be built later on. So, the API should document its resources, resources' attributes, operations, URI templates, HTTP verbs, hypermedia controls and errors in a machine-interpretable way. Moreover, because the service applies the CQRS pattern\footnote{\url{https://martinfowler.com/bliki/CQRS.html}} we needed the IDL to allow associating each operation to its own input and output data model.
 
@@ -29,28 +23,26 @@ Last, frameworks were considered based on the level of automation they provide.
 
 \subsection{Selection of the technologies}
 
-From these constraints we select a set of criteria and features to look for, listed in Table \ref{example-criteria}. We then count how many of these criteria each technology meet. Results are presented in Figure \ref{example-idl-results}, Figure \ref{example-dif-results} and Figure \ref{example-frameworks-results}. The three technologies matching the highest amount of selected criteria are highlighted in green for each kind of technology.
-
-\input{figures/example-criteria}
+From these constraints we select a set of criteria and features to look for, which are checked on Fig~\ref{idl-matrix}, Fig~\ref{interchange-formats-matrix}, Fig~\ref{frameworks-matrix}. We then count how many of these criteria each technology meet. Results are presented in Fig~\ref{example-idl-results}, Fig~\ref{example-dif-results} and Fig~\ref{example-frameworks-results}. For each kind of technology, the three technologies matching the highest amount of selected criteria are highlighted in green.
 
 \begin{figure}[ht]
 \caption{Results for interface description languages}
 \centering
-\includegraphics[width=1\textwidth]{figures/example-idl-results.png}
+\includegraphics[width=0.8\textwidth]{figures/example-idl-results.png}
 \label{example-idl-results}
 \end{figure}
 
 \begin{figure}[ht]
 \caption{Results for data interchange formats}
 \centering
-\includegraphics[width=1\textwidth]{figures/example-dif-results.png}
+\includegraphics[width=0.8\textwidth]{figures/example-dif-results.png}
 \label{example-dif-results}
 \end{figure}
 
 \begin{figure}[ht]
 \caption{Results for implementation frameworks}
 \centering
-\includegraphics[width=1\textwidth]{figures/example-frameworks-results.png}
+\includegraphics[width=0.8\textwidth]{figures/example-frameworks-results.png}
 \label{example-frameworks-results}
 \end{figure}
 
@@ -68,4 +60,4 @@ In the context of this project we chosen to use both Hydra and OpenAPI. OpenAPI 
 
 To ease the selection of the technologies with the comparison matrices, we developed an open-sourced web application\footnote{\url{https://antoinecheron.github.io/morice/}}. Users go through three steps: (i) selecting the kind of technologies they are looking for, (ii) selecting the criteria that are required and giving each criteria a value and then (iii) he is presented the results. Results is one table per kind of technology. In the table, the listed technologies are the ones that match the criteria that the user selected as required. Technologies are ranked by score. The score of one technology is the sum of the value of the criteria the technology meets.
 
-This tool is intended to be improved in future works.
+% This tool is intended to be improved in future works.
