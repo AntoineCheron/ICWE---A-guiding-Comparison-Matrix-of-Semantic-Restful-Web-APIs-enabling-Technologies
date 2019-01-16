@@ -60,12 +60,13 @@ In \cite{7195633}, authors describe the WS3 maturity model for classifying Seman
 The design dimension represents the different modeling strategies adopted for designing the technical access to a Web API through four levels. The first three levels are similar to the first three levels of the Richardson maturity model. The four levels are (i) RPC-like, (ii) resources have dedicated URI and the API is stateless, (iii) operations on a resource are mapped to HTTP verbs in compliance with the protocol and (iv) the smallest data unit that can be handled by operations is the resource.
 
 The Profile dimension reflects the quality of documentation provided by the Web API through two levels. It takes into account only documentations that can be interpreted by software agents. The first level, interaction profile, requires the description of all available HTTP operations and how to trigger them. The second and final level, the domain profile, requires the description of domain specific details such as the order of operation execution, pre- and post-conditions, business constraints, etc. This level may be reached by providing hypermedia controls at runtime.
+% From Antoine: sentence "It takes into account only documentations that can be interpreted by software agents" important to keep
 
 The Semantic dimension represents the use of semantic technologies through two levels. To reach the Semantic Description level, an API must semantically describe properties and operations of resources. Next level, Linked Data, is reach when the API semantically describes relationships between resources.
 
 \paragraph{Usage}
 
-In their paper, Salvadori \emph{et al.} propose to rate systems along each dimension independently, with a score going from 0 to n, n being the number of levels in the dimension.
+In their paper, Salvadori \emph{et al.} propose to rate systems along each dimension independently, with a score going from 0 to the number of levels in the dimension.
 
 For example, a non-documented API with no semantic support that reach level 3 of the Richardson Maturity Model will be rated D3-S0-P0. This means that the API reach the Protocol Compliance level of the Domain dimension and no level of both the Semantic and Profile dimensions.
 

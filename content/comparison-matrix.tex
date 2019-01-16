@@ -16,52 +16,53 @@ Among available technologies, we distinguished three categories: (i) Interface D
 
 % TODO - From reviewer 2 : The methodology steps can be shortened, as they do not add any useful information. How did you verified the criteria (step v) w.r.t. your previous projects? Provide an example.
 
-The design of the comparison matrix follows a 5 steps sequential process: (i) looking for candidate technologies, (ii) selecting candidate technologies, (iii) deep reading and understanding of each candidate technology, (iv) elaboration of fine grain criteria to characterize and differentiate technologies, (v) verification that the elaborated criteria suited all technologies and the needs from FABERNOVEL developers, and finally (vi) verification that the elaborated criteria highlighted the differences between technologies.
+The design of the comparison matrix follows a 5 steps sequential process: (i) looking for candidate technologies, (ii) selecting candidate technologies, (iii) deep reading and understanding of each candidate technology, (iv) elaboration of fine grain criteria to characterize and differentiate technologies, (v) double-verification that the elaborated criteria highlighted the differences between technologies.
 % maybe merge (v) and (vi)
 
-The research of candidate technology (step i) was done by:
+The research of candidate technologies (step i) was done by:
 
 \begin{enumerate}
     \item Searching Google and Google Scholar for Semantic REST Technologies using compositions of keywords from the set: ["web", "semantic", "restful", "rest", "service", "API", "interface", "description", "documentation", "language", "modeling", "hypermedia", "document", "format", "RDF", "data-interchange", "media-type", "linked data", "hateoas", "rest api", "framework"]
-    \item Searching Google Scholar for tools automating tasks from services description, using keywords: "matchmakers", "service composition", "service discovery", "rest service analysis", "automated mashups".
-    \item Identifying tools to ease the selection of a features set for Web APIs. Method: searching Google and Google Scholar for keywords from the set ["rest", "api", "best practices", "maturity model", "semantic rest", "hypermedia api", "web api", "web services", categorization"].
-    \item Selecting papers related to building and evaluating Web APIs from the proceedings of the ICWE and WS-REST.
+    \item Searching Google Scholar for tools automating tasks from services description, using keywords: "matchmakers", "service composition", "service discovery", "rest service analysis", "automated mashups". We then selected other papers and technologies from their references and the papers that cite the ones we selected.
+    \item Looking at papers related to documenting, implementing and evaluating Web APIs from the proceedings of ICWE and WS-REST. 
 \end{enumerate}
 
-From these researches, we selected papers (step ii), articles and web pages that were either the description of a technology, a comparison of technologies or a tool leveraging these technologies. We opened our research to technologies from the 1990s to today. 
-From the selected papers and articles, we listed the IDLs, data-interchange formats and frameworks still available to use today. % not true. TODO : change this sentence
-Then, we read the specification of each chosen technology (step iii) and elaborate classification criteria (step iv). All the raw material used to elaborate this classification is available online\footnote{\url{https://anonymous.4open.science/repository/14273e30-d332-446a-b5a0-df91239532ab/}}. 
+% Maybe update the 81 number below if the Github with raw material changes.
+From these researches, we selected 81 papers (step ii), standards, articles and web pages from their abstract or introduction. To be selected, documents had to be the specification of an interface definition language or model, a framework that supports HATEOAS features, an interchange format that supports RDF or HATEOAS features, a comparison between these technologies or a tool leveraging them. Frameworks to build Semantic Web Services were excluded because they are based on triples which are too far from the resource-centric approach of REST. We opened our research to technologies from the 1990s to today and retained technologies that are still available today.
 
-We then verified (step v) that the classification criteria suited the needs we had on previous projects we made at FABERNOVEL for large companies. % not very good : TODO rewrite
+As a next step, we read the specification of each chosen technology (step iii) and elaborate classification criteria (step iv). Some criteria targeting interchange formats are the H Factor\footnote{\url{http://amundsen.com/hypermedia/hfactor/}}. Others were carefully designed to highlight differences between technologies in the area of Semantic REST, based on the core design of the technologies, the features they provide and the details of the WS3 maturity model. Several steps of refinement were needed to avoid duplicating criteria or hiding details. All the raw material used to elaborate this classification is available online\footnote{\url{https://github.com/AntoineCheron/semantic-restful-api-technologies-comparison-matrix}}. 
+% TODO @Johann @Olivier: the above paragraph needs to be reviewed. If not good enough, I will need help to improve it.
 
-As a final step (step vi), we read the specifications again to validate that the selected criteria highlighted differences and commonalities well, and to verify results.
+As a final step (step v), we read the specifications again to validate that the selected criteria highlighted differences and commonalities well, and to verify results.
 
-In the rest of the paper, only machine-processable descriptions are considered.
-
-% To be included into a relevant section / paragraph
 \paragraph{Popularity criteria}
 
-We included a popularity criteria to offer a vague idea of whether a community might help with any problem that may arise and how likely the technology will be lasting. The popularity score is between 0 and 2. The highest, the more popular the technology is. To score technologies we took several indicators into account. First, the number of questions about the technology on Stack Overflow\footnote{\url{https://stackoverflow.com}}. Then, for IDL and interchange formats only, we looked at the five most popular libraries on NPM\footnote{\url{https://www.npmjs.com/}} and Maven Central\footnote{\url{https://mvnrepository.com/repos/central}}. On NPM we selected the weekly downloads and on Maven, the usages. On the other hand, for the frameworks we collected the total downloads from the main repository of its language. The popularity score is computed as follows:
+% Long version
+%We included a popularity criteria to offer a vague idea of whether a community might help with any problem that may arise and how likely the technology will be lasting. The popularity score is between 0 and 2. The highest, the more popular the technology is. To score technologies we took several indicators into account. First, the number of questions about the technology on Stack Overflow\footnote{\url{https://stackoverflow.com}}. Then, for IDL and interchange formats only, we looked at the five most popular libraries on NPM\footnote{\url{https://www.npmjs.com/}} and Maven Central\footnote{\url{https://mvnrepository.com/repos/central}}. On NPM we selected the weekly downloads and on Maven, the usages. On the other hand, for the frameworks we collected the total downloads from the main repository of its language. The popularity score is computed as follows:
+
+%Short version
+We included a popularity criteria to offer a vague idea of whether a community might help with any problem that may arise and how likely the technology will be lasting. The popularity score is between 0 and 2. The highest, the more popular the technology is. The popularity score is computed as follows:
 
 \begin{itemize}
     \item 0 - Not enough to reach 1
-    \item 1 - More than 100 questions on stack overflow AND (2500+ NPM weekly downloads OR 100+ usages from maven central)
-    \item 2 - More than 400 questions on stack overflow AND (more than 500.000 total downloads OR more than 15.000 NPM weekly download OR more than 500 maven usages)
+    \item 1 - More than 100 questions on stack overflow AND (2500+ NPM weekly downloads OR 100+ maven usages)
+    \item 2 - More than 400 questions on stack overflow AND (more than 500.000 total downloads OR more than 15.000 NPM weekly downloads OR more than 500 maven usages)
 \end{itemize}
 
+% Antoine : continue from here
 \subsection{Interface Description Languages}
 
-Interface Description Languages (IDLs) provide a vocabulary to document domain, functional and non-functional aspects of the API. Non-RDF IDLs are tied to a fixed set of file formats. Meta-models describing Web APIs are IDLs not tied to a file format. We also consider meta-models in this section. We identified 16 candidates that are classified according to 32 criteria in Figure \ref{idl-matrix}.
+Interface Description Languages (IDLs) provide a vocabulary to document domain, functional and non-functional aspects of an API. Non-RDF IDLs are tied to a fixed set of file formats. We also consider meta-models describing Web APIs, which are IDLs not tied to a file format, in this section. We identified 16 candidates that are classified according to 31 criteria in Fig~\ref{idl-matrix}.
 
 When IDLs and data-interchange formats are both compatible with RDF, they can be combined to form a file format that can be used as both the data-interchange format and the IDL. This has great benefits in terms of complexity and maintainability.
 
-\subsubsection{Proper Meta-Models}
+\paragraph{Meta-Models}
 
-Among the 16 classified IDLs, 4 are meta-models. In \cite{Rapido} authors present a tool to sketch CRUD or Hypermedia APIs. When selecting Hypermedia APIs, users have to choose one media-type, either HAL or Collection+JSON and then start sketching the application using state machines. \cite{Schreier:2011:MRA:1967428.1967434} models each resource type as a finite state machine with deterministic state transitions. In this model, each resource type has a single initial state, operations can go beyond CRUD and conditions can be modeled to inform the availability of operations. However, conditions are not modeled in more details, which does not make them machine-interpretable. In \cite{10.1007/978-3-642-22233-7_24}, authors propose to model the whole system as a non-deterministic state machine. This method makes software agents unable to discover the set of messages to exchange in order to make available an operation that is not at the moment the user would like to invoke it. Haupt et al. \cite{10.1109/ICWS.2014.30} propose a very thorough multi-layered model that separates the domain model from the URI model. It does not allow specifying conditions on the availability of operations and see resources as having a static structure, making it impossible to represent different state of a resource with different classes. 
+Among the classified IDLs, 4 are meta-models. In \cite{Rapido} authors present a tool to sketch CRUD or Hypermedia APIs. When selecting Hypermedia APIs, the user skteches the application using state machines and obtain a result in the HAL or Collection+JSON format. \cite{Schreier:2011:MRA:1967428.1967434} models each resource type as a finite state machine with deterministic state transitions. In this model, each resource type has a single initial state, operations can go beyond CRUD and conditions can be modeled to inform the availability of operations. However, conditions are not modeled in more details, which does not make them machine-interpretable. In \cite{10.1007/978-3-642-22233-7_24}, authors propose to model the whole system as a non-deterministic state machine. This method makes software agents unable to discover the set of messages to exchange in order to make an operation available. Haupt et al. \cite{10.1109/ICWS.2014.30} propose a thorough multi-layered model that separates the domain model from the URI model. It does not allow specifying conditions on the availability of operations and see resources as having a static structure, making it impossible to represent different state of a resource with different classes. 
 
 \subsubsection{Meta-Models from Interface Description Languages}
 
-The 11 interface description languages we found are Hydra Core Vocabulary \cite{Lanthaler:2013:CGW:2487788.2487799}, Atom Syndication Format\cite{AtomSF}, WSDL+SAWSDL, WADL, OpenApi (used by Swagger), API Blueprint, hREST + microWSMO, RESTdesc, RADL, RAML and I/O Docs. We decided to include WSDL+SAWSDL even though it targets RPC-like applications over HTTP \cite{john2012framework}, because it tackles the problem of semantically describing HTTP services.
+The 11 interface description languages we found are Hydra Core Vocabulary \cite{Lanthaler:2013:CGW:2487788.2487799}, Atom Syndication Format\cite{AtomSF}, WSDL+SAWSDL, WADL, OpenApi (used by Swagger), API Blueprint, hREST + microWSMO, RESTdesc, RADL, RAML and I/O Docs. We decided to include WSDL+SAWSDL even though it targets web services \cite{john2012framework} because it tackles the problem of semantically describing HTTP services.
 
 % FIGURE OF THE IDL CLASSIFICATION
 \begin{figure*}[Ht]
