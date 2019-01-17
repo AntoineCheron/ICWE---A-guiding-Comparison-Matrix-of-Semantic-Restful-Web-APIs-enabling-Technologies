@@ -62,7 +62,7 @@ Among the classified IDLs, 4 are meta-models from papers. In \cite{Rapido} autho
 The 11 interface description languages we found are Hydra Core Vocabulary \cite{Lanthaler:2013:CGW:2487788.2487799}, Atom Syndication Format\cite{AtomSF}, WSDL+SAWSDL, WADL, OpenApi (used by Swagger), API Blueprint, hREST + microWSMO, RESTdesc, RADL, RAML and I/O Docs. We decided to include WSDL+SAWSDL even though it targets web services \cite{john2012framework} because it tackles the problem of semantically describing HTTP services.
 
 % FIGURE OF THE IDL CLASSIFICATION
-\begin{figure*}[ht]
+\begin{figure*}[!ht]
 \caption{Interface Description Languages Comparison Matrix}
 \includegraphics[width=1\textwidth]{figures/IDL.png}
 \label{idl-matrix}
@@ -92,7 +92,7 @@ When building an API that provides no meta-data, JSON, XML and YAML are the thre
 On the other side, when the system to build have to send meta-data, no interchange format is considered as a standard today. We found eleven candidates from our research. They are classified in Fig. \ref{interchange-formats-matrix} according to 26 criteria. % TODO : update the number of criteria
 
 % FIGURE OF THE INTERCHANGE FORMATS CLASSIFICATION
-\begin{figure*}[ht]
+\begin{figure*}[!ht]
 \caption{Data-interchange Formats Comparison Matrix}
 \includegraphics[width=1\textwidth]{figures/DIF.png}
 \label{interchange-formats-matrix}
@@ -113,7 +113,7 @@ Implementation frameworks are software libraries that guide developers through t
 In \cite{salvadori2014framework} authors propose \textit{Hypermedia Web API Support}, a Java framework based on JAX-RS 2.0 that uses annotations to semantically describe REST APIs. The end result is a JSON-LD document, enriched with the Hydra vocabulary, that describes the whole API. In \cite{parastatidis2010role} Parastatidis et al. present Restfulie, a framework to ease the development of REST APIs using resources, content-negotiation and state transitions as its core building blocks. Besides these frameworks, we found that API-Platform, Spring HATEOAS, JAX-RS and Ripozo support HATEOAS features. They are classified in Fig. \ref{frameworks-matrix} according to 29 criteria. % TODO: update the number of criteria
 
 % FIGURE OF THE IMPLEMENTATION FRAMEWORKS CLASSIFICATION
-\begin{figure*}[ht]
+\begin{figure*}[!ht]
 \caption{Implementation Frameworks Comparison Matrix}
 \includegraphics[width=1\textwidth]{figures/frameworks.png}
 \label{frameworks-matrix}
