@@ -12,7 +12,7 @@ The service we describe have to communicate with both internal and external comp
 
 In the context of this service, there is a huge amount of business rules that determine (i) the warranties an insured can include in a contract and (ii) the available services for a case, based on the specificity of the given case and the warranties of the contract that the case is linked to. Writing and maintaining these rules both on the server and its clients would have been very costly. To keep business rules on the server-side only we decided to use the Hypermedia As The Engine Of Application State.
 
-In order to increase the evolvability of the company's IS the service should be Linked Data compatible. This then allows to use a HyperGraphQL\footnote{\url{https://www.hypergraphql.org/}} middleware 
+In order to increase the evolvability of the company's IS the service should be Linked Data compatible. This then allows to use a HyperGraphQL\footnote{\url{https://www.hypergraphql.org/}} middleware to easily query and mutate the whole IS and automatically create mashups.
 
 Because the project constitutes the core of the company's business, it should be future proof. We believe that this includes being Linked Data compatible because of the growing interest in those technologies and the new possibilities it offers, such as automatic mash-ups. Moreover, considering that the contractors that provide services are very diverse and numerous, the interactions with their APIs should leverage the possibilities offered by the use of RDF semantics, such as automatic discovery and composition. So, we looked for RDF-compatible technologies.
 % [] - Explain why being future proof means being Linked Data compatible with one argument.
