@@ -4,15 +4,27 @@
 
 % TODO : from reviewer 2 : By shortening Sec. 2 and 3 you make space for RELATED WORK, which is completely omitted. A quick search for "semantic rest apis survey" shows at least the following papers you must discuss:
 
+
+
+
 % - Verborgh, Ruben, et al. "Survey of semantic description of REST APIs." REST: Advanced Research Topics and Practical Applications. Springer, New York, NY, 2014. 69-89.
 % - Garriga, Martin, et al. "RESTful service composition at a glance: A survey." Journal of Network and Computer Applications 60 (2016): 32-53.
 
+In \cite{verborgh_rest_2014}, and ~\cite{7195633}, authors justifies the need for providing semantics description of rest API to avoid programmers that develop client applications must deeply understand of several APIs from multiple providers. Based on this motivation, they survey academic approach to add semantics to  EST APIs description and technique to automatically compose restful services. %Compare to these works that  has been used to build the maturity model, we provide 
+
+%Still todo
+%APIComposer: Data-driven Composition of REST APIs
+
+
 % Added by Antoine on December 31th -> TODO review
 In \cite{serrano2017linked} authors present a framework for REST-service integration based on Linked Data models. First, API providers should semantically describe their REST services. Second, API consumers express data queries with SPARQL. Then, they use a middleware developed by the authors that can automatically compose API calls to respond to data queries with a RDF graph.
-At the first step, authors needed to find and select an RDF-compatible Interface Description Language, which is precisely the kind of use-case our approach address. Because they couldn't find an existing one fitting their needs, they designed a new one by leveraging existing technologies such as MSM \cite{pedrinaci2010toward}, Hydra, RAML and OpenApi. This new language cannot be classified in this paper as it is described on the surface and not documented.
+At the first step, authors needed to find and select an RDF-compatible Interface Description Language, which is precisely the kind of use-case our approach address. Because they could not find an existing one fitting their needs, they designed a new one by leveraging existing technologies such as MSM \cite{pedrinaci2010toward}, Hydra, RAML and OpenApi. %This new language cannot be classified in this paper as it is described on the surface and not documented.
 
-% Added by Antoine on January 3rd -> TODO review
-With this paper we try to lower the entry barrier for developing mature Semantic REST APIs. Other research efforts were done towards this same objective. Among them is the semi-automatic annotation of web services as done by Patil et al. in \cite{patil2004meteor}. Their contribution could help significantly increase the number of semantically described services, in case their work is open-sourced and updated to support nowadays popular technologies.
+In~\cite{Tuchinda:2011:BMD:1993053.1993058}, Tuchinda \textit{et al.} describe a programming-by-demonstration approach to building mashup by example. Instead of requiring a user to select and customize a set of widgets, the user simply demonstrates the integration task by example.  Their approach addresses the problems of extracting data from web sources, cleaning and modeling the extracted data, and integrating the data across sources. It illustrates the benefits of getting meta-data on top of services to improve the definition of Mashup and decrease the coupling between information system building block and the complexity of  developing mature Semantic REST APIs. In~\cite{10.1007/978-3-642-17694-4_11}, Duke  \textit{et al.} proposes an approach to reduce the complexity for describing, finding, composing and invoking semantic rest services. They mainly provide an approach where they show how they can combine services when they get semantics information. 
+
+Other research efforts were done to lower the entry barrier for developing mature Semantic REST APIs.  Among them is the semi-automatic annotation of web services as done by Patil \textit{et al}. in \cite{patil2004meteor}. Their contribution could help significantly increase the number of semantically described services, in case their work is open-sourced and updated to support nowadays popular technologies.
+
+
 
 % Works going in the same direction :
 % Tools to help semantically annotate documents
