@@ -42,13 +42,14 @@ Combining REST with Semantic Web and Linked Data is a promising path since it en
 
 \subsection{Selecting an API functionality level}\label{sec:maturityLevel}
 
-The first step an architect faces when designing a Web API is to select the features to support.
-Architects use a maturity model to help them decide on the supported features. In general, a maturity model is a scale that represents to what level a technology complies with a given architecture. To reach a level, a technology must meet each constraint of the previous levels and of the targeted level.
-Currently, the most used maturity model in industry is the Richardson Maturity Model \cite{RichardsonMaturityModel}, which targets building REST APIs. However, we recommend using the WS3 maturity model \cite{7195633} as it extends the Richardson one, and SoHA \cite{SoHA}, with Semantic REST API-enabling constraints.
+Architects use a maturity model to decide features which must be supported by their APIs. In general, a maturity model is a scale that represents the compliance of a technology with a given architecture. To reach a level, a technology must meet each constraint of the previous levels and of the targeted level.
+Currently, the de-facto standard in industry is the Richardson Maturity Model \cite{RichardsonMaturityModel}, which targets building REST APIs. However, we recommend using the WS3 maturity model \cite{7195633} as it combines the models proposed by Richardson, and SoHA \cite{SoHA}, and extend them with semantic and documentation constraints.
 
-\paragraph{The WS3 maturity model}
+\subsubsection{The WS3 maturity model}
 
-In \cite{7195633}, authors describe the WS3 maturity model for classifying Semantic REST Web APIs. WS3 aims at promoting the adherence to REST architectural principles and the adoption of Semantic Web technology to improve the design, reuse, integration and documentation of Web APIs. It classifies APIs along three independent dimensions: \textit{design}, \textit{profile} and \textit{semantic}, as shown in Fig. \ref{WS3}.
+In \cite{7195633}, authors describe the WS3 maturity model for classifying Semantic REST Web APIs. 
+%WS3 aims at promoting the adherence to REST architectural principles and the adoption of Semantic Web technology to improve the design, reuse, integration and documentation of Web APIs. 
+It classifies APIs along three independent dimensions: \textit{design}, \textit{profile} and \textit{semantic}, as shown in Fig. \ref{WS3}.
 
 \begin{figure}[ht]
   \caption{WS3 Maturity Model (from \cite{7195633})}
@@ -57,27 +58,39 @@ In \cite{7195633}, authors describe the WS3 maturity model for classifying Seman
   \label{WS3}
 \end{figure}
 
-The design dimension represents the different modeling strategies adopted for designing the technical access to a Web API through four levels. The first three levels are similar to the first three levels of the Richardson maturity model. The four levels are (i) RPC-like, (ii) resources have dedicated URI and the API is stateless, (iii) operations on a resource are mapped to HTTP verbs in compliance with the protocol and (iv) the smallest data unit that can be handled by operations is the resource.
+The \textbf{design dimension} represents the different modeling strategies adopted for designing the technical access to a Web API through four levels: 
+%The first three levels are similar to the first three levels of the Richardson maturity model.
+(i) RPC-like, (ii) resources have dedicated URI and the API is stateless, (iii) operations on a resource are mapped to HTTP verbs in compliance with the protocol and (iv) the smallest data unit that can be handled by operations is the resource.
 
-The Profile dimension reflects the quality of documentation provided by the Web API through two levels. It takes into account only documentations that can be interpreted by software agents. The first level, interaction profile, requires the description of all available HTTP operations and how to trigger them. The second and final level, the domain profile, requires the description of domain specific details such as the order of operation execution, pre- and post-conditions, business constraints, etc. This level may be reached by providing hypermedia controls at runtime.
+The \textbf{profile dimension} reflects the quality of documentation that can be interpreted by software agents through two levels. The first level: \textit{interaction profile}, requires the description of all available HTTP operations and how to trigger them. The second level: the \textit{domain profile}, requires the description of domain specific details such as the order of operation execution, pre- and post-conditions, business constraints, etc.
 % From Antoine: sentence "It takes into account only documentations that can be interpreted by software agents" important to keep
 
-The Semantic dimension represents the use of semantic technologies through two levels. To reach the Semantic Description level, an API must semantically describe properties and operations of resources. Next level, Linked Data, is reach when the API semantically describes relationships between resources.
+The \textbf{semantic dimension} represents the use of semantic technologies through two levels. To reach the \textit{Semantic Description level}, an API must semantically describe properties and operations of resources. The next level: \textit{Linked Data}, is reached when the API semantically describes relationships between resources.
 
 \paragraph{Usage}
+In their paper \cite{7195633}, Salvadori \emph{et al.} propose to rate systems along each dimension independently, with a score going from 0 to the number of levels in the dimension.
+For example, a non-documented API with no semantic support that reach level 3 of the Richardson Maturity Model will be rated D3-S0-P0. As another example, a system that supports HATEOAS and provides a swagger-like documentation along with the data, is rated D3-S0-P2.
 
-In their paper, Salvadori \emph{et al.} propose to rate systems along each dimension independently, with a score going from 0 to the number of levels in the dimension.
+\subsection{Discussion on the WS3 maturity level} % detail discussion about what?
 
-For example, a non-documented API with no semantic support that reach level 3 of the Richardson Maturity Model will be rated D3-S0-P0. This means that the API reach the Protocol Compliance level of the Domain dimension and no level of both the Semantic and Profile dimensions.
+From our experience at FABERNOVEL, we noticed two limitations to the applicability of the maturity model to a wider audience. These limitations are related to the \textit{Atomic Resources level} and the granularity of the WS3 level.
 
-%For another example, we consider building an API that supports HATEOAS and that provides a swagger-like documentation in the messages at runtime. HATEOAS is used to document available state transitions and to advertise users of the next operations to trigger in order to complete a given business process. This API is rated D3-S0-P2.
+According to WS3, the \textit{Atomic Resources} constraint requires that the smallest data unit handled by operations is the resource.
+Respecting this constraint may introduce negative properties on the API.
+Let us consider an API handling insurance contracts which offers read and update operations on the postal address, email address and insurance manager. 
+Two solutions can be considered to respect the \textit{Atomic Resources} constraint. 
+The first solution is to create one resource, where every properties can be modified at once, which increases the risk of concurrent modification. 
+With this solution, the API would have two operations. 
+The second solution is to create one resource for each concept: contract, email address, postal address and the manager. The API would have eight operations. This solution increases dramatically the number of operations which complexify the documentation and maintainability.
+Another solution would be to create one resource with four operations: (i) read, (ii) update email, (iii) update postal address and (iv) update manager. 
+This solution lowers the concurrency risk while maintaining a reasonable complexity and offering meaningful operation names. Unfortunately this solution breaks the \textit{Atomic Resources constraint}. We therefore argue that respecting this last constraint may not always lead to better API quality.
+% Miss : impossible to do CQRS and respecting the Atomic Resources constraints leads to two possible issues : (i) less business meaning in the API, (ii) a huge increase in the number of resources
 
-A system that supports HATEOAS and provides a swagger-like documentation along with the data, to inform the user of available state transitions, and of the operations to trigger to complete a given business process, is rated D3-S0-P2.
-
-\paragraph{Discussion}
-
-The WS3 maturity model is today the most complete maturity model to classify web semantic Rest API. Nevertheless, from our experience at FABERNOVEL, we noticed two limitations to the applicability of the maturity model to a wider audience. These limitations are related to the Atomic Resources level and the abstraction chosen by the authors.
-
-The Atomic resources constraint requires that the smallest data unit that can be handled by operations is the resource. Let us consider an API handling insurance contracts, that is readable and allows updating the postal address, email address and insurance manager, respecting the Atomic Resources constraint.  Two solutions can be considered. The first one is to create one resource, where every properties can be modified at once, which creates the risk that if two users want to modify two different information at the same time, only one may be made. With this solution, the API would have two operations. The second solution is to create four resources: one for the contract, one for the email address, one for the postal address and one for the manager. The API would have seven operations. The best trade-off would be to create one resource with four operations: (i) read, (ii) update email, (iii) update postal address and (iv) update manager. This solution lowers concurrency risks, the complexity for users and developers is in the middle of the two solutions offered by the Atomic Resources constraint and operations have a more meaningful name.
-
-The second limitation relates to the granularity of the maturity levels. Indeed, each level implies more than one feature. This granularity allows for a coarse-grained categorization of systems. However, to precisely differentiate systems based on the features they implement, a deeper study is needed. Given two systems that reach P1, which means they describe all available HTTP operations and how to trigger them, one might also describe its authentication process and errors whereas the second does not. And yet they reach the same maturity level. As a second example, we consider two systems that describe HTTP operations and domain details such as the order of operations and the authentication process. One might support hypermedia controls whereas the other one has an OpenAPI documentation. These two features allow to reach the same maturity level: P2, even though they make a big difference from the client point of view.
+The second limitation relates to the granularity of the maturity levels. Indeed, each level implies more than one feature. This granularity allows for a coarse-grained categorization of systems. 
+However, to precisely differentiate systems based on the features they implement, a deeper study is needed. 
+Given two systems that reach P1, which means they describe all available HTTP operations and how to trigger them, one might also describe its authentication process and errors whereas the second does not. 
+And yet they reach the same maturity level. 
+%As a second example, we consider two systems that describe HTTP operations and domain details such as the order of operations and the authentication process. 
+%One might support hypermedia controls whereas the other one has an OpenAPI documentation. 
+%These two features allow to reach the same maturity level: P2, even though they make a big difference from the client point of view. 
+We therefore argue here for a finer grain categorization of API.% by focusing on the specific features provided.

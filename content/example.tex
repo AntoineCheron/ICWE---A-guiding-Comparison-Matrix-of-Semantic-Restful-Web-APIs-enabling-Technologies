@@ -8,20 +8,19 @@ To manage insurance contracts, the service holds five kinds of resources: (i) th
 
 \subsection{Constraints on the technologies to select}
 
-The service we describe have to communicate with both internal and external components. Internal components are front-end applications, such as mobile or web applications, and other kernel services, such as payments. External components are contractors APIs, for example taxi or mechanics companies. 
+The service we describe have to communicate with both internal and external components. Internal components are front-end applications, such as mobile or web applications, and other kernel services, such as payments. External components are contractors APIs, for example taxi or mechanics companies.
 
 In the context of this service, there is a huge amount of business rules that determine (i) the warranties an insured can include in a contract and (ii) the available services for a case, based on the specificity of the given case and the warranties of the contract that the case is linked to. Writing and maintaining these rules both on the server and its clients would have been very costly. To keep business rules on the server-side only we decided to use the Hypermedia As The Engine Of Application State.
 
-In order to increase the evolvability of the company's IS the service should be Linked Data compatible. This then allows to use a HyperGraphQL\footnote{\url{https://www.hypergraphql.org/}} middleware to easily query and mutate the whole IS and automatically create mashups.
+Because the project constitutes the core of the company's business it should be designed to meet future evolution of the company's IS. 
+The service should therefore be Linked Data compatible. This enables the automatic creation of mashups and the use of a HyperGraphQL\footnote{\url{https://www.hypergraphql.org/}} middleware to easily query the whole IS \cite{Tuchinda:2011:BMD:1993053.1993058}.
+Moreover, considering that the contractors providing services are very diverse and numerous, the interactions with their APIs should leverage the automatic discovery and composition offered by the use of RDF semantics.
 
-Because the project constitutes the core of the company's business, it should be future proof. We believe that this includes being Linked Data compatible because of the growing interest in those technologies and the new possibilities it offers, such as automatic mash-ups. Moreover, considering that the contractors that provide services are very diverse and numerous, the interactions with their APIs should leverage the possibilities offered by the use of RDF semantics, such as automatic discovery and composition. So, we looked for RDF-compatible technologies.
-% [] - Explain why being future proof means being Linked Data compatible with one argument.
+Because the project is core to the company, new API clients will be built in the future. So, the API must document its resources, resources' attributes, operations, URI templates, HTTP verbs, hypermedia controls and errors in a machine-interpretable way. Moreover, because the service applies the CQRS pattern\footnote{\url{https://martinfowler.com/bliki/CQRS.html}} we needed the IDL to enable associating an operation to its own input and output data model.
 
-Because the project is core to the company, API clients will likely be built later on. So, the API should document its resources, resources' attributes, operations, URI templates, HTTP verbs, hypermedia controls and errors in a machine-interpretable way. Moreover, because the service applies the CQRS pattern\footnote{\url{https://martinfowler.com/bliki/CQRS.html}} we needed the IDL to allow associating each operation to its own input and output data model.
+Among the interchange formats, the goal was to be close as possible to what developers already know. So the format had to be entity-centric, based on JSON and its structure had to be as close as possible to an original JSON document.
 
-In the category of interchange format, the goal was to be as close as possible to what developers already know. So the format had to be based on JSON and entity-centric. The structure had to be as close as possible to an original JSON document.
-
-Last, frameworks were considered based on the level of automation they provide.
+Last, frameworks were considered according to the level of automation they provide.
 
 \subsection{Selection of the technologies}
 
@@ -48,9 +47,9 @@ From these constraints we select a set of criteria and features to look for, whi
 \label{example-frameworks-results}
 \end{figure}
 
-Technologies don't have to match every criteria to be selected. Most of the time, missing features can be implemented afterwards, or proposed to the maintainers of the technologies. A fine-grained analysis should be done on a per-feature basis.
+Technologies do not have to match every criteria to be selected. Most of the time, missing features can be implemented afterwards, or proposed to the maintainers of the technologies.
 
-\textbf{Interface Description Language.} Hydra, OpenAPI and RADL are the three technologies matching the highest number of selected criteria. However, no one matches every criteria. Hydra lacks the ability to describe non-functional properties and media-types, which can be done with other RDF vocabularies. RADL lacks the ability to semantically describe resources model and operations, errors and non-functional properties, which can also be done with other RDF vocabularies. On the other hand, OpenAPI does not support the description of hypermedia controls neither the usage of any RDF vocabulary, which is far more difficult to compensate. 
+\textbf{Interface Description Language.} Hydra, OpenAPI and RADL are the technologies matching the highest number of selected criteria. However, no one matches all criteria. Hydra lacks the ability to describe non-functional properties and media-types, which can be done with other RDF vocabularies. RADL lacks the ability to semantically describe resources models, operations, errors and non-functional properties, which can also be done with other vocabularies. On the other hand, OpenAPI does not support the description of hypermedia controls neither the usage of RDF vocabulary, which is more difficult to compensate. 
 
 In the context of this project we chosen to use both Hydra and OpenAPI. OpenAPI because it has most features and is a must-have today because of its tooling and popularity. Hydra because it can be easily completed with other vocabularies and used with JSON-LD, when RADL is tight to XML.
 
@@ -58,8 +57,7 @@ In the context of this project we chosen to use both Hydra and OpenAPI. OpenAPI 
 
 \textbf{Implementation frameworks.} API Platform, Spring HATEOAS and Hypermedia Web API Support \cite{salvadori2014framework} are the three technologies matching the highest number of criteria. Hypermedia Web API Support is immediately removed from the candidates because no public implementation is available. API Platform should be preferred over Spring HATEOAS because it matches five more criteria than Spring. However, developers of the companies we worked with know Java and not PHP. Moreover the Spring framework has a very good popularity with them which compensates the need to develop some features by hand. This is why we decided to go with Spring HATEOAS.
 
-\subsubsection{Easing the selection of the technologies}
-
-To ease the selection of the technologies with the comparison matrices, we developed an open-sourced web application\footnote{\url{https://antoinecheron.github.io/morice/}}. Users go through three steps: (i) selecting the kind of technologies they are looking for, (ii) selecting the criteria that are required and giving each criteria a value and then (iii) he is presented the results. Results is one table per kind of technology. In the table, the listed technologies are the ones that match the criteria that the user selected as required. Technologies are ranked by score. The score of one technology is the sum of the value of the criteria the technology meets.
+\paragraph{Easing the selection of the technologies}
+We developed an open-sourced web application\footnote{\url{https://antoinecheron.github.io/morice/}} in which the user selects the kind of technologies he is looking for, then the criteria that are required in his use case and attributes each criteria a value. He is finally presented the technologies that meet required criteria, ordered by score. The latter is the sum of the value of each criteria the technology meets.
 
 % This tool is intended to be improved in future works.
