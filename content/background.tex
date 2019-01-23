@@ -6,12 +6,14 @@
 This section describes the main concepts related to the design and implementation of Semantic Restful APIs and the process of selecting an API functionality.
 
 \paragraph{Semantic RESTful services}
-Combining REST with Semantic Web and Linked Data is a promising path since it enables the description of APIs that can change without breaking client applications. These APIs advertise their available state transitions, therefore enabling automatic composition to create high level services \cite{alarcon2015rest}. Smart software agents can then automatically discover the suite of operations to realize complex workflows and even make APIs compatible with voice assistants. This is achieved by semantically enriching the data and operations of REST systems with Semantic Web ontology technologies and by linking resources to other resources.
+Combining REST with Semantic Web and Linked Data is a promising path since it enables the description of APIs that can change without breaking client applications. These APIs advertise their available state transitions, therefore enabling automatic composition to create high level services~\cite{alarcon2015rest}. Smart software agents can then automatically discover the suite of operations to realize complex workflows and even make APIs compatible with voice assistants. This is achieved by semantically enriching the data and operations of REST systems with Semantic Web ontology technologies and by linking resources to other resources.
 
 \subsection{Selecting an API functionality level}\label{sec:maturityLevel}
 
 Architects use a maturity model to decide features which must be supported by their APIs. In general, a maturity model is a scale that represents the compliance of a technology with a given architecture. To reach a level, a technology must meet each constraint of the previous levels and of the targeted level.
 Currently, the de-facto standard in industry is the Richardson Maturity Model \cite{RichardsonMaturityModel}, which targets building REST APIs. However, we recommend using the WS3 maturity model \cite{7195633} as it combines the models proposed by Richardson, and SoHA \cite{SoHA}, and extend them with semantic and documentation constraints.
+
+\vspace*{-0.5cm}
 
 \subsubsection{The WS3 maturity model}
 
@@ -19,7 +21,7 @@ In \cite{7195633}, authors describe the WS3 maturity model for classifying Seman
 It classifies APIs along three independent dimensions: \textit{design}, \textit{profile} and \textit{semantic}, as shown in Fig. \ref{WS3}.
 
 \begin{figure}[ht]
-  \caption{WS3 Maturity Model (from \cite{7195633})}
+  \caption{\vspace*{-0.5cm} WS3 Maturity Model (from \cite{7195633})}
   \centering
   \includegraphics[width=0.47\textwidth]{figures/ws3-maturity-model.png}
   \label{WS3}
