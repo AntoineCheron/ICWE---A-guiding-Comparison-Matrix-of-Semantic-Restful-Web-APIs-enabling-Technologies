@@ -1,18 +1,19 @@
 \section{Discussion} \label{sec:discussion}
 
-% ANTOINE -> TODO
+% TODO - ne parler de GraphQL que dans related work
 
-% TODO - from reviewer 2 : I agree with the fact that GraphQL is way more adopted than RDF-based semantic approaches, but how does it comes out from your previous analysis? GraphQL was not even mentioned before, and does not arise from the results. Please clarify how can one conclude that, by means of references and evidence from your analysis.
+% Sert à rien
+%As discussed in section \ref{sec:matrix} there is no framework yet available to build a Semantic REST API.
+This section discusses, from our perspective, why there is no standard solution to meet all the criteria discussed in section \ref{sec:matrix}, and highlight the opportunity for new research initiatives. 
 
-As discussed in section \ref{sec:matrix} there is no framework yet available to build a Semantic REST API. This section discusses, from our perspective, why there is no standard solution to meet all the criteria. These limits also make it possible to start research initiatives for the community. 
+% Bien, une ou deux lignes à enlever
+First, there is no standard IETF or W3C interchange format for building semantic REST APIs. In addition, none of the existing interchange formats support all the criteria described above, making it likely that new formats will emerge.
+For this reason, frameworks supporting semantic REST APIs will have to rely on formats that are likely to evolve, which will require additional effort and costs. This reduces the likelihood that framework editors will invest time in developing such features. 
+%And yet, this is necessary to compensate for the complexity of these technologies.
 
-First, there is no IETF or W3C standard interchange format for building Semantic REST APIs. In addition, none of the existing interchange formats support all the criteria described above, nor are they widely adopted, making it likely that new formats will emerge.
-For this reason, frameworks supporting Semantic REST APIs will be forced to rely on formats that are prone to evolve, which will require additional effort and costs. This reduces the likelihood that framework editors will invest time in developing such features. And yet, this is necessary to compensate the complexity of these technologies.
+For us, the second and also the most important reason is that the well-known and widely used tools do not rely on REST semantic APIs to provide additional and useful features. Among the possible functionalities, we envision various tools to automate APIs testing, REST clients generation, API gateways and middleware and smarter desktop REST clients.
+We believe that this limits the adoption of REST semantic APIs because the cost of building these APIs is not perceived as offering a sufficient short-term return on investment.
 
-To us, the second reason is that the most famous tools that developers use on a daily basis do not offer additional features that require Semantic REST APIs. We think of automated test tools, REST clients, API gateways and middleware among others.
-So, we think that the cost of building Semantic REST APIs is not perceived as providing a sufficient short-term return on investment, which may be why developers do not ask framework editors to ease the creation of such APIs.
 
-Furthermore, GraphQL and API streaming technologies became very trendy in 2019. GraphQL is now a dedicated topic of the API Days conference whereas Semantic REST or Linked Data applications is not. We think that this absence of cool factor does not help Semantic REST technologies emerge.
-
-% The second reason is that most developers ask for more support for GraphQL and streaming than for Semantic REST. We believe that this is due to two reasons. First of all, GraphQL and streaming are well understood and known, which is unfortunately less the case with RESTful semantic API concepts. Second, there is currently no tool that leverages the power of REST semantic APIs. Thus, being compatible with Semantic REST requires additional efforts to adapt client libraries and to train developers. We believe that with new tools, such as front-end clients, automated test libraries, improved documentation generation and HTTP clients such as Postman, developers would be more interested in semantic REST features.
+% Second, there is currently no tool that leverages the power of REST semantic APIs. Thus, being compatible with Semantic REST requires additional efforts to adapt client libraries and to train developers. We believe that with new tools, such as front-end clients, automated test libraries, improved documentation generation and HTTP clients such as Postman, developers would be more interested in semantic REST features.
 

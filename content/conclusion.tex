@@ -1,12 +1,11 @@
 \section{Conclusion}
+In this paper, we have presented three comparison matrices that assist architects in choosing RESTful semantic APIs enabling technologies that meet their needs.
+Through a real example, we have illustrated how the use of these matrices simplifies the choice of these technologies. 
+As stated in the paper, technologies should be chosen not only according to the number of criteria they meet, but also according to the specific needs of the project. 
+To facilitate such a selection, we have developed an assistant available online.
 
-% Not to forget in this conclusion, from introduction: Based on these comparison matrices, we draw the outline of a research road-map to ease the adoption of Semantic RESTful APIs in industry.
+We also pointed out that some interesting features are missing in current technologies.
+The description of constraints and conditions indicating the availability of state transitions is ignored by IDLs, vocabularies, interchange formats and frameworks. On the other hand, resource modeling as FSM is not available in most frameworks.
+More importantly, well-known tools do not take advantage of the power of semantic REST APIs to provide additional and useful features.
 
-In this paper we presented three comparison matrices that help architects choose the Semantic RESTful APIs enabling technologies that meet their needs.
-We used an example to show how simple it is to reduce the list of technologies to three when the characteristics to be implemented are identified.
-In future work, we plan to make these matrices available online through semantic restful APIs and to improve their accessibility to facilitate technology selection.
-
-We also pointed out that some important features are missing in current technologies. The modeling and description of constraints and conditions indicating the availability of state transitions are ignored by IDL, vocabularies, interchange formats and frameworks. On the other hand, modeling resource as FSM is not available in most frameworks. In addition, IDLs target the documentation of the entire API in a single file. This prevents them from being used for hypermedia controls. Finally, very few tools take advantage of the power of RESTful semantic APIs, and interest around this topic is still low.
-
-Based on these findings, we identify three areas for improvement: (i) adoption, (ii) semantics and documentation, and (iii) implementation. Adoption can be made easier and more beneficial with new tools that leverage the power of these APIs. The discovery and selection of semantic vocabulary should be simplified and the addition of new vocabulary would allow systems to be described more accurately and more thoroughly. This would reduce coupling and increase both composability and navigation.
-
+Based on these findings, we identify areas for improvement in the tools around Semantic REST APIs that we believe could increase its adoption. By leveraging the semantic description and advertising of state transitions and non-functional properties, automated testing tools can become smarter, REST client libraries can lower the coupling with the server and automate tasks such as login, and middleware can automatically create responses from the composition of several APIs.

@@ -1,10 +1,10 @@
 \section{Introduction}
 
-Today, RESTful APIs \cite{FieldingThesis} have become the de-facto standard for building web applications. The main reason behind this popularity lies in the appropriate trade-off between the facility to build such applications and the benefits provided by this approach in such an opened large-scale distributed system: evolutivity, scalability and loose-coupling. However, 95\% of Web APIs are not RESTful \cite{10.1007/978-3-319-38791-8_2} as they claim to be.
+Today, RESTful APIs \cite{FieldingThesis} have become the de-facto standard for building web applications. The main reason behind this popularity lies in the appropriate trade-off between the facility to build such applications and the benefits provided by this approach in such an opened large-scale distributed system: evolutivity, scalability and loose-coupling. However, 95\% of Web APIs are not RESTful ~\cite{10.1007/978-3-319-38791-8_2} as they claim.
 
-Until today, no single standard has emerged to design truly RESTful APIs. Consequently, software architects are facing the challenge of selecting the good technology support for designing and implementing these systems. Typically, a software architect has to select the right interface description language, the right  interchange format and the right framework to ease the development of such APIs.
+Until today, no single standard has emerged to design truly RESTful APIs. Consequently, software architects are facing the challenge of selecting the right technologies for the design and implementation of these systems. Typically, a software architect has to select the right interface description language, interchange format and framework to ease the development of such APIs.
 
-In addition, a new trend has recently emerged to create RESTful APIs that carry their own semantics, they are called Semantic RESTful APIs~\cite{7195633}. It is a vision that proposes to make fully REST-compliant APIs compatible with the Semantic Web ~\cite{TheSemanticWeb} and Linked Data~\cite{LinkedDataPrinciples}. From our experience at FABERNOVEL, we have found that building such APIs does not require much more effort than truly RESTful systems, whereas it offers great benefits, such as loose-coupling, automated API mash-ups~\cite{benslimane2008services}, machine-interpretability and very powerful querying. 
+In addition, a new trend has recently emerged to create RESTful APIs that carry their own semantics, they are called Semantic RESTful APIs~\cite{7195633}. It is a vision that proposes to make fully REST-compliant APIs compatible with the Semantic Web ~\cite{TheSemanticWeb} and Linked Data~\cite{LinkedDataPrinciples}. From our experience at FABERNOVEL, we found that building such APIs does not require much more effort than truly RESTful systems, whereas it offers great benefits, such as loose-coupling, automated API mash-ups~\cite{benslimane2008services}, machine-interpretability and very powerful querying. 
 
 % TODO: add a word on the questionnaire sent to developers to gather their REX on choosing hypermedia and Linked Data technologies
 However, the design of semantic RESTful APIs considerably increases the complexity for the architect to choose the appropriate technology. Indeed, the specific criteria and properties to be taken into account when choosing an IDL, an exchange format and a framework are not explicit. A decision matrix is missing that would allow the architect to understand the consequences of a design decision, i.e. the characteristics and limitations of each approach.
@@ -13,18 +13,9 @@ In this paper, we propose to fill this gap by providing decision matrices that h
 
 \begin{itemize}
     \item three comparison matrices of interchange formats, interface description languages and frameworks that help choosing appropriate technologies to build Semantic RESTful APIs
-    \item a list of features that are missing from state-of-the-art technologies to allow the creation of RESTful semantic APIs
+    \item key features that are missing from state-of-the-art technologies to assist and make more beneficial the creation of Semantic RESTful APIs
 \end{itemize}
 
 Based on these comparison matrices, we draw the outline of a research road-map to ease the adoption of Semantic RESTful APIs in industry.
 
-The remainder of this paper is organized as follows. Section \ref{sec:background} provides the required background on Web API and REST technology. Then section \ref{sec:maturityLevel} describes the reference maturity level to choose the functionality level of the API and its limitation. The two following sections describes our comparison matrix and an illustration example to highlight the benefit of our proposition. Finally section \ref{sec:discussion} discusses the role of the existing frameworks to build REST APIs. 
-
-
-
-
-
-%This task is very time-consuming and difficult  because there exist no standard and a lot of candidates to it. Moreover, technologies have subtle differences that may have a big impact on the features the resulting system supports. Identifying them requires reading lots of documentation from specifications, technologies' websites or blog articles as no previous paper addresses this issue.
-
-%In recent years, the concept of Semantic RESTful APIs arose. It proposes to make fully REST-compliant APIs Semantic Web \cite{TheSemanticWeb} and Linked Data \cite{LinkedDataPrinciples} compatible. From our experience at FABERNOVEL, we noticed that building such APIs does not require a lot more effort than truly RESTful systems, whereas it offers great benefits, such as loose-coupling, automated API mash-ups, machine-interpretability and very powerful querying.
-
+The remainder of this paper is organized as follows. Section \ref{sec:background} provides the required background on semantic REST API and the reference maturity level to choose the functionality level of an API along with its limitation. The two following sections describe our comparison matrices and an illustration example that highlights the benefits of our proposition. Finally section \ref{sec:discussion} discusses the role of the existing frameworks to build REST APIs. 
