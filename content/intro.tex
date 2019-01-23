@@ -10,7 +10,11 @@ Until today, no single standard has emerged to design truly RESTful APIs. Conseq
 In addition, a new trend has recently emerged to create RESTful APIs that carry their own semantics, they are called Semantic RESTful APIs~\cite{7195633}. It is a vision that proposes to make fully REST-compliant APIs compatible with the Semantic Web ~\cite{TheSemanticWeb} and Linked Data~\cite{LinkedDataPrinciples}. From our experience at FABERNOVEL, we found that building such APIs does not require much more effort than truly RESTful systems, whereas it offers great benefits, such as loose-coupling, automated API mash-ups~\cite{benslimane2008services}, machine-interpretability and very powerful querying. 
 
 % TODO: add a word on the questionnaire sent to developers to gather their REX on choosing hypermedia and Linked Data technologies
-However, the design of semantic RESTful APIs considerably increases the complexity for the architect to choose the appropriate technology. Indeed, the specific criteria and properties to be taken into account when choosing an IDL, an exchange format and a framework are not explicit. A decision matrix is missing that would allow the architect to understand the consequences of a design decision, i.e. the characteristics and limitations of each approach.
+However, the design of semantic RESTful APIs considerably increases the complexity for the architect to choose the appropriate technology. Indeed, the specific criteria and properties to be taken into account when choosing an IDL, an exchange format and a framework are not explicit. 
+The industrial needs are growing for  proper tools to support trade-off decisions of architect; a tool that would help him/her  to understand the consequences of a design decision, i.e. the characteristics and limitations of each approach. 
+%A decision matrix is missing that would allow the architect to understand the consequences of a design decision, i.e. the characteristics and limitations of each approach.
+
+ 
  
 In this paper, we propose to fill this gap by providing decision matrices that help architects to choose the technologies that will best meet their needs. The main contributions of this paper are:
 
@@ -19,6 +23,6 @@ In this paper, we propose to fill this gap by providing decision matrices that h
     \item key features that are missing from state-of-the-art technologies to assist and make more beneficial the creation of Semantic RESTful APIs
 \end{itemize}
 
-Based on these comparison matrices, we draw the outline of a research road-map to ease the adoption of Semantic RESTful APIs in industry.
+Using these comparison matrices, we illustrate their usage on an industrial use case and draw the outline of a research road-map to ease the adoption of Semantic RESTful APIs in industry.
 
 The remainder of this paper is organized as follows. Section \ref{sec:background} provides the required background on semantic REST API and the reference maturity level to choose the functionality level of an API along with its limitation. The two following sections describe our comparison matrices and an illustration example that highlights the benefits of our proposition. Finally section \ref{sec:discussion} discusses the role of the existing frameworks to build REST APIs. 
