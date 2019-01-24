@@ -31,12 +31,13 @@ Results are presented in Fig~\ref{example-idl-results}, Fig~\ref{example-dif-res
 For each matrix, the three technologies matching the highest amount of selected criteria are highlighted in green.
 It is important to note that technologies do not have to match every criteria to be selected.
 Most of the time, missing features can be implemented afterwards, or proposed to the maintainers of the technologies.
-
+\vspace*{-0.5cm}
 \begin{figure}[ht]
 \caption{Results for interface description languages}
 \centering
 \includegraphics[width=0.8\textwidth]{figures/example-idl-results.png}
 \label{example-idl-results}
+\vspace*{-0.5cm}
 \end{figure}
 
 \begin{figure}[ht]
@@ -44,6 +45,7 @@ Most of the time, missing features can be implemented afterwards, or proposed to
 \centering
 \includegraphics[width=0.8\textwidth]{figures/example-dif-results.png}
 \label{example-dif-results}
+\vspace*{-0.5cm}
 \end{figure}
 
 \begin{figure}[ht]
@@ -51,6 +53,7 @@ Most of the time, missing features can be implemented afterwards, or proposed to
 \centering
 \includegraphics[width=0.8\textwidth]{figures/example-frameworks-results.png}
 \label{example-frameworks-results}
+\vspace*{-0.3cm}
 \end{figure}
 
 \paragraph{Interface Description Language}
@@ -64,10 +67,10 @@ Mason, JSON-LD + Hydra are the two technologies matching the highest number of s
 API Platform, Spring HATEOAS and Hypermedia Web API Support \cite{salvadori2014framework} are the three technologies matching the highest number of criteria. The latter is immediately removed from the candidates because no public library is available. In this example, API Platform should be preferred over Spring HATEOAS because it matches five more criteria than Spring. However, developers of the companies we worked with know Java and not PHP. Moreover the Spring framework is very popular with them, which compensates the need to develop some features by hand. This is why we decided to go with Spring HATEOAS.
 
 \paragraph{Easing the selection of the technologies}
-% We developed an open-sourced web application\footnote{\url{https://antoinecheron.github.io/morice/}} in which the user selects the kind of technologies he is looking for, then the criteria that are required in his use case and attributes each criteria a value. He is finally presented the technologies that meet required criteria, ordered by score. The latter is the sum of the value of each criteria the technology meets.
+We have developed an open-source web application{\footnote{\url{https://antoinecheron.github.io/morice/}}} in which the user selects the type of technology, then the required criteria and finally the user gives a \textit{score} to each criterion to indicate its importance. 
+In return, the web application presents the list of technologies that meet the required criteria ordered by their respective \textit{score}.
+By offering a two-step wizard, we reduce the process of identifying relevant technologies to a few minutes.
 
-% [] TODO - faire une synthèse pour expliquer que choisir ces technologies demande de regarder plus que le nombre de critères, comme l'exemple pour le framework le montre. 
-
-We developed an open-sourced web wizard to ease the selection of the technologies. It is accessible online\footnote{\url{https://antoinecheron.github.io/morice/}}.
+% We developed an open-sourced web wizard to ease the selection of the technologies. It is accessible online\footnote{\url{https://antoinecheron.github.io/morice/}}.
 
 % This tool is intended to be improved in future works.

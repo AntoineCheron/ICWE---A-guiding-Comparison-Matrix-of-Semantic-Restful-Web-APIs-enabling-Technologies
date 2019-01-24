@@ -2,7 +2,6 @@
 
 \vspace*{-0.2cm}
 
-
 This section describes the main concepts related to the design and implementation of Semantic Restful APIs and the process of selecting an API functionality.
 
 \paragraph{Semantic RESTful services}
@@ -10,7 +9,9 @@ Combining REST with Semantic Web and Linked Data is a promising path since it en
 
 \subsection{Selecting an API functionality level}\label{sec:maturityLevel}
 
-Architects use a maturity model to decide features which must be supported by their APIs. In general, a maturity model is a scale that represents the compliance of a technology with a given architecture. To reach a level, a technology must meet each constraint of the previous levels and of the targeted level.
+Today, Web systems offer a wide range of functionalities. For example, they may offer multiple media types or a single one, comply with the HTTP protocol or use it as a transfer protocol, or even semantically describe their resources. This diversity can make the process of comparing and selecting the minimum set of features to be implemented in a company very time-consuming. Maturity models have been proposed as a solution to this problem~\cite{paulk1993capability}~\cite{7195633}.
+
+In companies, architects use them to decide features which must be supported by their APIs. In general, a maturity model is a scale that represents the compliance of a technology with a given architecture. To reach a level, a technology must meet each constraint of the targeted level and the previous levels.
 Currently, the de-facto standard in industry is the Richardson Maturity Model \cite{RichardsonMaturityModel}, which targets building REST APIs. However, we recommend using the WS3 maturity model \cite{7195633} as it combines the models proposed by Richardson, and SoHA \cite{SoHA}, and extend them with semantic and documentation constraints.
 
 \vspace*{-0.5cm}
@@ -20,13 +21,24 @@ Currently, the de-facto standard in industry is the Richardson Maturity Model \c
 In \cite{7195633}, authors describe the WS3 maturity model for classifying Semantic REST Web APIs. 
 It classifies APIs along three independent dimensions: \textit{design}, \textit{profile} and \textit{semantic}, as shown in Fig. \ref{WS3}.
 
-\begin{figure}[ht]
-  \caption{\vspace*{-0.5cm} WS3 Maturity Model (from \cite{7195633})}
-  \centering
-  \includegraphics[width=0.47\textwidth]{figures/ws3-maturity-model.png}
+\begin{wrapfigure}{l}{0.52\textwidth}
+\vspace{-0.9cm}
+\caption{ WS3 Maturity Model (from \cite{7195633})}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/ws3-maturity-model.png}
+  \end{center}
   \label{WS3}
-\end{figure}
+  \vspace{-0.9cm}
+\end{wrapfigure}
 
+%\vspace*{-0.5cm}
+%\begin{figure}[ht]
+%  \caption{\vspace*{-0.5cm} WS3 Maturity Model (from \cite{7195633})}
+%  \centering
+%  \includegraphics[width=0.47\textwidth]{figures/ws3-maturity-model.png}
+%  \label{WS3}
+%\end{figure}
+%\vspace*{-0.5cm}
 The \textbf{design dimension} represents the different modeling strategies adopted for designing the technical access to a Web API through four levels:
 (i) RPC-like, (ii) resources have dedicated URI and the API is stateless, (iii) operations on a resource are mapped to HTTP verbs in compliance with the protocol and (iv) the smallest data unit that can be handled by operations is the resource.
 
@@ -36,9 +48,10 @@ The \textbf{semantic dimension} represents the use of semantic technologies thro
 
 \paragraph{Usage}
 In their paper \cite{7195633}, Salvadori \emph{et al.} propose to rate systems along each dimension independently, with a score going from 0 to the number of levels in the dimension.
-For example, a non-documented API with no semantic support that reach level 3 of the Richardson Maturity Model will be rated D3-S0-P0. As another example, a system that supports HATEOAS and provides a swagger-like documentation along with the data is rated D3-S0-P2.
-
+For example, a non-documented API with no semantic support that reach level 3 of the Richardson Maturity Model will be rated D3-S0-P0\footnote{D3-S0-P0: Atomic Resources Design, no Semantic Description, no Profile description}. As another example, a system that supports HATEOAS and provides a swagger-like documentation along with the data is rated D3-S0-P2\footnote{D3-S0-P2: Atomic Resources Design, no Semantic Description, Domain Profile}.
+\vspace*{-0.5cm}
 \subsection{Discussion on the WS3 maturity level}
+\vspace*{-0.2cm}
 
 From our experience at FABERNOVEL, we noticed two limitations to the applicability of the maturity model to a wider audience. These limitations are related to the \textit{Atomic Resources level} and the granularity of the WS3 level.
 
